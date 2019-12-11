@@ -28,6 +28,8 @@ def test(idx) :
         for j in range(10000) :
             continue
 
+    print("finish" + str(idx))
+
     return "finish" + str(idx)
 
 @app.task
