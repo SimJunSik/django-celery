@@ -1,19 +1,20 @@
 from __future__ import absolute_import, unicode_literals
 from celery import shared_task
+from celery_project import app
 
-@shared_task
+@app.task
 def add(x, y):
     return x + y
 
-@shared_task
+@app.task
 def mul(x, y):
     return x * y
 
-@shared_task
+@app.task
 def xsum(numbers):
     return sum(numbers)
 
-@shared_task
+@app.task
 def test(idx) :
     for i in range(10000) :
         for j in range(10000) :
@@ -28,3 +29,19 @@ def test(idx) :
             continue
 
     return "finish" + str(idx)
+
+@app.task
+def test2(idx) :
+    for i in range(10000) :
+        for j in range(10000) :
+            continue
+
+    for i in range(10000) :
+        for j in range(10000) :
+            continue
+
+    for i in range(10000) :
+        for j in range(10000) :
+            continue
+
+    return "22finish" + str(idx)
