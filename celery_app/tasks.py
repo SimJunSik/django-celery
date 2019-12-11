@@ -16,17 +16,8 @@ def xsum(numbers):
 
 @app.task
 def test(idx) :
-    for i in range(10000) :
-        for j in range(10000) :
-            continue
-
-    for i in range(10000) :
-        for j in range(10000) :
-            continue
-
-    for i in range(10000) :
-        for j in range(10000) :
-            continue
+    import time
+    time.sleep(4)
 
     print("finish" + str(idx))
 
