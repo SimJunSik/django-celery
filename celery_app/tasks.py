@@ -14,7 +14,7 @@ def xsum(numbers):
     return sum(numbers)
 
 @shared_task
-def test() :
+def test(idx) :
     for i in range(10000) :
         for j in range(10000) :
             continue
@@ -27,4 +27,4 @@ def test() :
         for j in range(10000) :
             continue
 
-    return "finish"
+    return "finish" + str(idx)
